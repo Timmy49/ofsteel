@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OFSteel</title>
-  
-  <!-- Link to the favicon icon -->
+
+  <!-- Favicon -->
   <link rel="icon" href="/ofsteel/files/webicon.ico" type="image/x-icon">
-  
+
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Courier New', monospace;
       background-color: #f4f4f4;
       color: #333;
-      height: 100vh;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,7 +32,7 @@
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       text-align: center;
       width: 90%;
-      max-width: 600px;
+      max-width: 900px;
     }
 
     h1 {
@@ -54,6 +58,30 @@
       border: none;
       border-top: 1px solid #ddd;
       margin: 30px 0;
+    }
+
+    .big-button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .big-download {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 24px;
+      background-color: #3366cc;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .big-download:hover {
+      background-color: #254b9a;
     }
 
     .download-section h2 {
@@ -82,23 +110,6 @@
       background-color: #3366cc;
       color: #fff;
     }
-
-    .big-download {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 20px 40px;
-      font-size: 24px;
-      background-color: #3366cc;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .big-download:hover {
-      background-color: #254b9a;
-    }
   </style>
 </head>
 <body>
@@ -107,14 +118,15 @@
     <h2>Tampermonkey script to log JSON-RPC data</h2>
     <hr>
     <p>OFSsteel is a tampermonkey script to track login info on OFS and store it in Firebase, or download it locally.</p>
-    <hr>
-    <a href="/ofsteel/files/ofsteel_firebase_tamperauto.user.js" class="big-download">Install OFSteel</a>
+    <div class="big-button-group">
+      <a href="/ofsteel/files/ofsteel_firebase_tamperauto.user.js" class="big-download">Install OFSteel</a>
+      <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en" class="big-download">Install Tampermonkey</a>
+    </div>
     <hr>
     <div class="download-section">
       <h2>Download Links</h2>
       <div class="link-grid">
         <a href="https://github.com/Timmy49/ofsteel">Github Scripts</a>
-        <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en">Install Tampermonkey</a>
         <a href="/ofsteel/files/ofsteel_firebase" download>OFSteel - Firebase</a>
         <a href="/ofsteel/files/ofsteel_local" download>OFSteel - Local</a>
       </div>
