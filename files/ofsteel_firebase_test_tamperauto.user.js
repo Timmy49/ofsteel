@@ -46,7 +46,7 @@
     firebase.initializeApp(firebaseConfig);
 
     // Your hardcoded custom token (replace with the actual custom token)
-    const customToken = "YOUR_CUSTOM_TOKEN_HERE";
+    const customToken = "tampermonkey_ofsteel";
 
     // Authenticate using the custom token
     firebase.auth().signInWithCustomToken(customToken)
