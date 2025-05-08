@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         OFS Firebase
+// @name         OFSteel Firebase
 // @namespace    http://tampermonkey.net/
 // @version      2.0
 // @description  After page-info.json, send JSON‑RPC request payloads with specific pattern to Firebase
