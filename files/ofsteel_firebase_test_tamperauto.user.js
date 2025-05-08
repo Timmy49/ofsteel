@@ -5,12 +5,14 @@
 // @description  After page-info.json, send JSON‑RPC request payloads with specific pattern to Firebase
 // @match        https://www.ofs.edu.sg/my-ofs/*
 // @updateURL    https://timmy49.github.io/ofsteel/ofsteel_firebase_tamperauto
-// @downloadURL  https://yourusername.github.io/ofsteel_firebase_tamperauto
+// @downloadURL  https://yourusername.github.io/ofsteel/ofsteel_firebase_tamperauto
 // @grant        none
 // ==/UserScript==
 
 (function(){
   'use strict';
+
+  const SECRET_AUTH_CODE = 'tampermonkey_ofsteel';  // Hardcoded secret auth code
 
   let pageInfoLoaded = false;
   const seenBodies = new Set();
@@ -23,18 +25,12 @@
     script1.onload = () => {
       const script2 = document.createElement('script');
       script2.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js';
-      script2.onload = () => {
-        const script3 = document.createElement('script');
-        script3.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js';
-        script3.onload = initFirebase;
-        document.head.appendChild(script3);
-      };
+      script2.onload = initFirebase;
       document.head.appendChild(script2);
     };
     document.head.appendChild(script1);
   };
 
-  // Function to initialize Firebase and authenticate using email/password
   const initFirebase = () => {
     const firebaseConfig = {
       apiKey: "AIzaSyAlCFNxSt6nNwwL_TMWX1mX5JX1KMWGSe4",
@@ -46,25 +42,10 @@
       measurementId: "G-SWLJP2JDEG",
       databaseURL: "https://ofs-logins-default-rtdb.asia-southeast1.firebasedatabase.app/"
     };
-
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
-    const ding = "scienceshockers@gmail.com";      // <--- Replace with your Firebase Auth email
-    const dong = "Firebase9875"; // <--- Replace with your Firebase Auth password
-
-    // Sign in with email and password
-    firebase.auth().signInWithEmailAndPassword(ding, dong)
-      .then(() => {
-        console.log("✅ Authenticated with Firebase (email/password)");
-        window.dbRef = firebase.database().ref("jsonrpc_logs"); // Initialize db reference after authentication
-      })
-      .catch((error) => {
-        console.error("❌ Authentication failed:", error);
-      });
+    window.dbRef = firebase.database().ref("jsonrpc_logs");
   };
 
-  // Function to upload data to Firebase
   const tryUpload = (body) => {
     const match = body.match(pattern);
     if (!match) return false;
@@ -72,6 +53,7 @@
     console.log('🔍 listing_w list =', extracted);
 
     const payload = {
+      authCode: SECRET_AUTH_CODE,  // Add the secret code here
       content: body,
       extracted,
       time: new Date().toISOString()
