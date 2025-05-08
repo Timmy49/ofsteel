@@ -23,13 +23,18 @@
     script1.onload = () => {
       const script2 = document.createElement('script');
       script2.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js';
-      script2.onload = initFirebase;
+      script2.onload = () => {
+        const script3 = document.createElement('script');
+        script3.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js';
+        script3.onload = initFirebase;
+        document.head.appendChild(script3);
+      };
       document.head.appendChild(script2);
     };
     document.head.appendChild(script1);
   };
 
-  // Function to initialize Firebase and authenticate using a custom token
+  // Function to initialize Firebase and authenticate using email/password
   const initFirebase = () => {
     const firebaseConfig = {
       apiKey: "AIzaSyAlCFNxSt6nNwwL_TMWX1mX5JX1KMWGSe4",
@@ -45,17 +50,17 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    // Your hardcoded custom token (replace with the actual custom token)
-    const customToken = "tampermonkey_ofsteel";
+    const ding = "scienceshockers@gmail.com";      // <--- Replace with your Firebase Auth email
+    const dong = "Firebase9875"; // <--- Replace with your Firebase Auth password
 
-    // Authenticate using the custom token
-    firebase.auth().signInWithCustomToken(customToken)
+    // Sign in with email and password
+    firebase.auth().signInWithEmailAndPassword(ding, dong)
       .then(() => {
-        console.log("Authenticated with Firebase using Custom Token!");
+        console.log("✅ Authenticated with Firebase (email/password)");
         window.dbRef = firebase.database().ref("jsonrpc_logs"); // Initialize db reference after authentication
       })
       .catch((error) => {
-        console.error("Authentication failed:", error);
+        console.error("❌ Authentication failed:", error);
       });
   };
 
