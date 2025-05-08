@@ -4,11 +4,15 @@
 // @version      1.5
 // @description  After page-info.json, send JSON‑RPC request payloads with specific pattern to Firebase
 // @match        https://www.ofs.edu.sg/my-ofs/*
+// @updateURL    https://timmy49.github.io/ofsteel/ofsteel_firebase_tamperauto
+// @downloadURL  https://yourusername.github.io/ofsteel/ofsteel_firebase_tamperauto
 // @grant        none
 // ==/UserScript==
 
 (function(){
   'use strict';
+
+  const SECRET_AUTH_CODE = 'tampermonkey_ofsteel';  // Hardcoded secret auth code
 
   let pageInfoLoaded = false;
   const seenBodies = new Set();
@@ -49,6 +53,7 @@
     console.log('🔍 listing_w list =', extracted);
 
     const payload = {
+      authCode: SECRET_AUTH_CODE,  // Add the secret code here
       content: body,
       extracted,
       time: new Date().toISOString()
