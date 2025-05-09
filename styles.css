@@ -1,3 +1,21 @@
+/* Reset default margins and paddings */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and general layout */
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  min-height: 100vh;
+}
+
 /* Sidebar styling */
 .sidebar {
   width: 200px;
@@ -16,7 +34,7 @@
 }
 .sidebar hr {
   border: none;
-  border-top: 2px solid #1abc9c; /* matches your accent color */
+  border-top: 2px solid #1abc9c;
   margin: 10px 0 30px 0;
 }
 
@@ -26,13 +44,116 @@
   text-decoration: none;
   font-size: 18px;
   padding: 12px 15px;
-  margin-bottom: 20px;  /* increased spacing */
+  margin-bottom: 20px;
   transition: background-color 0.3s, color 0.3s;
   display: block;
-  border-radius: 0;     /* no rounding */
+  border-radius: 0; /* No rounding */
 }
 
 .sidebar a:hover {
   background-color: #1abc9c;
-  color: #2c3e50; /* dark text when highlighted */
+  color: #2c3e50;
+}
+
+/* Main content area — now mimics the old “card” */
+.container {
+  flex: 1;
+  padding: 60px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 20px;
+  /* Optional shadow:
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); */
+}
+
+/* Headings and text */
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  font-weight: normal;
+  color: #666;
+}
+h3 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #333; /* much darker */
+}
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 30px 0;
+}
+
+/* Buttons & Link-grid */
+.big-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.big-download {
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #3366cc;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.big-download:hover {
+  background-color: #254b9a;
+}
+
+.link-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.link-grid a {
+  text-decoration: none;
+  color: #3366cc;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 1px solid #3366cc;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+.link-grid a:hover {
+  background-color: #3366cc;
+  color: #fff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  .sidebar h1 { display: none; } /* Hide OFSteel header on small screens */
+  .sidebar hr { display: none; }
+  .sidebar a { 
+    margin-bottom: 0;
+    margin: 0 10px;
+    padding: 10px;
+  }
+  .container {
+    padding: 20px;
+    max-width: none;
+  }
 }
