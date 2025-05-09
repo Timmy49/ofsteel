@@ -7,14 +7,16 @@
   <link rel="icon" href="/ofsteel/files/webicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="light">
   <div class="sidebar">
     <h1>OFSteel</h1>
     <hr>
     <a href="index.html">Home</a>
     <a href="download-links.html">Download Links</a>
     <a href="documentation.html">Documentation</a>
+    <button class="toggle-theme">Switch to Dark Mode</button>
   </div>
+
   <div class="container">
     <h1>OFSteel Documentation</h1>
     <hr>
@@ -42,7 +44,33 @@
       <h2>Contributing</h2>
       <p>If you wish to contribute to the development of OFSteel, please visit our <a href="https://github.com/Timmy49/ofsteel">GitHub repository</a> for more information.</p>
     </section>
-    
   </div>
+
+<script>
+const toggleBtn = document.querySelector('.toggle-theme');
+const body = document.body;
+
+// Load saved theme on page load
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.remove('light');
+  body.classList.add('dark');
+  toggleBtn.textContent = 'Switch to Light Mode';
+}
+
+toggleBtn.addEventListener('click', () => {
+  if (body.classList.contains('light')) {
+    body.classList.remove('light');
+    body.classList.add('dark');
+    toggleBtn.textContent = 'Switch to Light Mode';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    body.classList.remove('dark');
+    body.classList.add('light');
+    toggleBtn.textContent = 'Switch to Dark Mode';
+    localStorage.setItem('theme', 'light');
+  }
+});
+</script>
+
 </body>
 </html>
