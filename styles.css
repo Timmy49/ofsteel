@@ -24,7 +24,7 @@ body.light {
 }
 
 body.dark {
-  background-color: #0f1a2b; /* dark navy blue */
+  background-color: #14233a;
   color: #e0e6f0;
 }
 
@@ -39,9 +39,9 @@ body.dark {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Sidebar darker in dark mode */
+/* Sidebar in dark mode: slightly darker */
 body.dark .sidebar {
-  background-color: #0b1625; /* deeper navy */
+  background-color: #0b1625;
 }
 
 /* Sidebar header */
@@ -78,7 +78,7 @@ body.dark .sidebar {
   margin-top: auto;
   padding: 12px 15px;
   font-size: 18px;
-  font-family: 'Courier New', monospace; /* match page font */
+  font-family: 'Courier New', monospace;
   background-color: #1abc9c;
   color: #2c3e50;
   border: none;
@@ -98,13 +98,14 @@ body.dark .sidebar {
   padding: 60px;
   max-width: 800px;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 0;
+  background-color: transparent;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Container lighter in dark mode, no edges */
+/* Dark mode container matches page bg */
 body.dark .container {
-  background-color: #0f1a2b; 
+  background-color: #14233a;
   border: none;
   backdrop-filter: none;
 }
