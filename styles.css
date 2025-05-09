@@ -26,6 +26,7 @@ body.light {
 body.dark {
   background-color: #14233a;
   color: #e0e6f0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Sidebar styling */
@@ -39,9 +40,9 @@ body.dark {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Sidebar in dark mode: slightly darker */
+/* Sidebar lighter in dark mode */
 body.dark .sidebar {
-  background-color: #0b1625;
+  background-color: #1f2a39; /* softer navy for sidebar in dark mode */
 }
 
 /* Sidebar header */
@@ -78,7 +79,7 @@ body.dark .sidebar {
   margin-top: auto;
   padding: 12px 15px;
   font-size: 18px;
-  font-family: 'Courier New', monospace;
+  font-family: 'Courier New', monospace; /* MATCH font */
   background-color: #1abc9c;
   color: #2c3e50;
   border: none;
@@ -98,16 +99,16 @@ body.dark .sidebar {
   padding: 60px;
   max-width: 800px;
   margin: auto;
-  border-radius: 0;
-  background-color: transparent;
+  border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode container matches page bg */
+/* Container lighter in dark mode, no edges */
 body.dark .container {
-  background-color: #14233a;
+  background-color: #14233a; /* slightly lighter navy */
   border: none;
   backdrop-filter: none;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Headings and text */
