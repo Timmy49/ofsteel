@@ -42,7 +42,7 @@ body.dark {
 
 /* Sidebar lighter in dark mode */
 body.dark .sidebar {
-  background-color: #1f2a39; /* softer navy for sidebar in dark mode */
+  background-color: #2c3e50; /* softer navy for sidebar in dark mode */
 }
 
 /* Sidebar header */
@@ -74,23 +74,34 @@ body.dark .sidebar {
   color: #2c3e50;
 }
 
-/* Toggle theme button */
 .toggle-theme {
-  margin-top: auto;
+  position: fixed;
+  bottom: 20px;            /* 20px up from the viewport bottom */
+  left: 320px;             /* just to the right of a 300px sidebar + 20px padding */
+  margin-top: 0;           /* clear out the old sidebar “auto” margin */
   padding: 12px 15px;
   font-size: 18px;
-  font-family: 'Courier New', monospace; /* MATCH font */
+  font-family: 'Courier New', monospace;
   background-color: #1abc9c;
   color: #2c3e50;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  z-index: 1000;           /* float above everything */
 }
 
 .toggle-theme:hover {
   background-color: #16a085;
   color: white;
+}
+
+/* Make sure it doesn’t collide on narrow screens */
+@media (max-width: 768px) {
+  .toggle-theme {
+    left: 20px;            /* pinned to the left edge */
+    bottom: 80px;          /* above the sidebar row of links */
+  }
 }
 
 /* Main content area */
