@@ -104,7 +104,7 @@ body.dark .sidebar {
 
 /* Container lighter in dark mode, no edges */
 body.dark .container {
-  background-color: #f4f4f4;
+  background-color: #0f1a2b; 
   border: none;
   backdrop-filter: none;
 }
