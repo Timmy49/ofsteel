@@ -6,157 +6,35 @@
   <title>OFSteel - Home</title>
   <link rel="icon" href="/ofsteel/files/webicon.ico" type="image/x-icon">
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', monospace;
-      background-color: #f4f4f4;
-      color: #333;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .container {
-      display: flex;
-      height: 100vh;
-    }
-
-    .sidebar {
-      width: 200px;
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      display: flex;
-      flex-direction: column;
-      padding: 30px 20px;
-    }
-
-    .sidebar a {
-      color: #ecf0f1;
-      text-decoration: none;
-      margin-bottom: 20px;
-      font-size: 18px;
-      transition: color 0.2s;
-    }
-
-    .sidebar a:hover {
-      color: #1abc9c;
-    }
-
-    .card {
-      flex: 1;
-      background-color: #fff;
-      padding: 60px;
-      margin: auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 80%;
-      max-width: 800px;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 25px;
-      font-weight: normal;
-      color: #666;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 30px 0;
-    }
-
-    .big-button-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .big-download {
-      display: inline-block;
-      padding: 20px 40px;
-      font-size: 24px;
-      background-color: #3366cc;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .big-download:hover {
-      background-color: #254b9a;
-    }
-
-    .download-section h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .link-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .link-grid a {
-      text-decoration: none;
-      color: #3366cc;
-      font-weight: bold;
-      padding: 10px 15px;
-      border: 1px solid #3366cc;
-      border-radius: 8px;
-      transition: background-color 0.2s, color 0.2s;
-    }
-
-    .link-grid a:hover {
-      background-color: #3366cc;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="downloads.html">Download Links</a>
+    <a href="documentation.html">Documentation</a>
+  </div>
+
   <div class="container">
-    <div class="sidebar">
-      <a href="index.html">Home</a>
-      <a href="downloads.html">Download Links</a>
-      <a href="documentation.html">Documentation</a>
+    <h1>OFSteel</h1>
+    <h2>Tampermonkey script to log JSON-RPC data</h2>
+    <hr>
+    <p>OFSteel is a Tampermonkey script to track login info on OFS and store it in Firebase, or download it locally.</p>
+
+    <div class="big-button-group">
+      <a href="/ofsteel/files/ofsteel_firebase_tamperauto.user.js" class="big-download">Install OFSteel</a>
+      <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en" class="big-download">Install Tampermonkey</a>
     </div>
-    <div class="card">
-      <h1>OFSteel</h1>
-      <h2>Tampermonkey script to log JSON-RPC data</h2>
-      <hr>
-      <p>OFSteel is a tampermonkey script to track login info on OFS and store it in Firebase, or download it locally.</p>
-      <div class="big-button-group">
-        <a href="/ofsteel/files/ofsteel_firebase_tamperauto.user.js" class="big-download">Install OFSteel</a>
-        <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en" class="big-download">Install Tampermonkey</a>
-      </div>
-      <hr>
-      <div class="download-section">
-        <h2>Other Links</h2>
-        <div class="link-grid">
-          <a href="https://github.com/Timmy49/ofsteel">Github Scripts</a>
-          <a href="https://console.firebase.google.com/u/0/project/ofs-logins/overview">Firebase</a>
-          <a href="/ofsteel/files/ofsteel_firebase" download>OFSteel - Firebase</a>
-          <a href="/ofsteel/files/ofsteel_local" download>OFSteel - Local</a>
-        </div>
+
+    <hr>
+
+    <div class="download-section">
+      <h2>Other Links</h2>
+      <div class="link-grid">
+        <a href="https://github.com/Timmy49/ofsteel">Github Scripts</a>
+        <a href="https://console.firebase.google.com/u/0/project/ofs-logins/overview">Firebase</a>
+        <a href="/ofsteel/files/ofsteel_firebase" download>OFSteel - Firebase</a>
+        <a href="/ofsteel/files/ofsteel_local" download>OFSteel - Local</a>
       </div>
     </div>
   </div>
