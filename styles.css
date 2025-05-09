@@ -76,10 +76,8 @@ body.dark .sidebar {
 
 .toggle-theme {
   position: fixed;
-  top: 50%;                /* start at halfway down the viewport */
   left: 0;                 /* align flush with the sidebar’s left */
-  width: 300px;            /* exactly the sidebar width */
-  transform: translateY(-50%); /* center vertically (shift up half of its height) */
+  width: 240px;            /* exactly the sidebar width */
   padding: 12px 15px;
   font-size: 18px;
   font-family: 'Courier New', monospace;
