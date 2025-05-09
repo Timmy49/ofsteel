@@ -4,8 +4,8 @@
 // @version      1.5
 // @description  After page-info.json, send JSON‑RPC request payloads with specific pattern to Firebase
 // @match        https://www.ofs.edu.sg/my-ofs/*
-// @updateURL    https://timmy49.github.io/ofsteel/ofsteel_firebase_tamperauto
-// @downloadURL  https://yourusername.github.io/ofsteel/ofsteel_firebase_tamperauto
+// @updateURL    https://timmy49.github.io/ofsteel/ofsteel_firebase_tamperauto.user.js
+// @downloadURL  https://timmy49.github.io/ofsteel/ofsteel_firebase_tamperauto.user.js
 // @grant        none
 // ==/UserScript==
 
