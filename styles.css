@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overscroll-behavior: none;
+}
+
 /* Body and general layout */
 body {
   font-family: 'Courier New', monospace;
@@ -82,7 +86,7 @@ body.dark .sidebar hr {
 .toggle-theme {
   position: fixed;
   bottom: 20px;
-  left: 30px
+  left: 40px
   width: 260px;
   padding: 12px 15px;
   font-size: 18px;
