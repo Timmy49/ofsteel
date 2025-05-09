@@ -58,7 +58,7 @@ body.dark .sidebar {
 }
 
 body.dark .sidebar hr {
-  border-top: 2px solid #2e3d55;  /* same teal as light mode */
+  border-top: 2px solid #1abc9c;  /* same teal as light mode */
 }
 
 
@@ -82,8 +82,8 @@ body.dark .sidebar hr {
 .toggle-theme {
   position: fixed;
   bottom: 20px;
-  left: 20px
-  width: 260px;            /* exactly the sidebar width */
+  left: 30px
+  width: 260px;
   padding: 12px 15px;
   font-size: 18px;
   font-family: 'Courier New', monospace;
