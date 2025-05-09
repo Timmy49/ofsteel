@@ -24,7 +24,6 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .sidebar a {
@@ -34,52 +33,72 @@ body {
   margin: 15px 0;
   transition: color 0.3s;
 }
-
 .sidebar a:hover {
   color: #1abc9c;
 }
 
-/* Main content area */
+/* Main content area — now mimics the old “card” */
 .container {
   flex: 1;
-  padding: 40px;
-  overflow-y: auto;
+  padding: 60px;               /* same as old card */
+  max-width: 800px;            /* limit width */
+  margin: auto;                /* center horizontally & vertically */
+  /* no background so it’s “on the page” */
+  border-radius: 20px;         /* gentle rounding */
+  /* keep the subtle shadow if you like: */
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); */
 }
 
-/* Text styling */
+/* Headings and text */
 h1 {
   font-size: 48px;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
-
 h2 {
   font-size: 22px;
   margin-bottom: 25px;
   font-weight: normal;
   color: #666;
 }
-
 p {
   font-size: 18px;
   margin-bottom: 30px;
   line-height: 1.5;
 }
-
 hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 30px 0;
 }
 
-/* Link grid styling */
+/* Buttons & Link-grid (same as before) */
+.big-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.big-download {
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #3366cc;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.big-download:hover {
+  background-color: #254b9a;
+}
+
 .link-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
 }
-
 .link-grid a {
   text-decoration: none;
   color: #3366cc;
@@ -89,55 +108,23 @@ hr {
   border-radius: 8px;
   transition: background-color 0.2s, color 0.2s;
 }
-
 .link-grid a:hover {
   background-color: #3366cc;
   color: #fff;
 }
 
-/* Big button styling (index.html buttons) */
-.big-button-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.big-download {
-  display: inline-block;
-  padding: 20px 40px;
-  font-size: 24px;
-  background-color: #3366cc;
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.big-download:hover {
-  background-color: #254b9a;
-}
-
-/* Responsive design */
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
+  body { flex-direction: column; }
   .sidebar {
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
   }
-
-  .sidebar a {
-    margin: 0 10px;
-  }
-
+  .sidebar a { margin: 0 10px; }
   .container {
     padding: 20px;
+    max-width: none;
   }
 }
