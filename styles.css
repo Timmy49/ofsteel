@@ -76,9 +76,10 @@ body.dark .sidebar {
 
 .toggle-theme {
   position: fixed;
-  bottom: 20px;            /* 20px up from the viewport bottom */
-  left: 320px;             /* just to the right of a 300px sidebar + 20px padding */
-  margin-top: 0;           /* clear out the old sidebar “auto” margin */
+  top: 50%;                /* start at halfway down the viewport */
+  left: 0;                 /* align flush with the sidebar’s left */
+  width: 300px;            /* exactly the sidebar width */
+  transform: translateY(-50%); /* center vertically (shift up half of its height) */
   padding: 12px 15px;
   font-size: 18px;
   font-family: 'Courier New', monospace;
@@ -88,7 +89,7 @@ body.dark .sidebar {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  z-index: 1000;           /* float above everything */
+  z-index: 1000;
 }
 
 .toggle-theme:hover {
@@ -96,11 +97,13 @@ body.dark .sidebar {
   color: white;
 }
 
-/* Make sure it doesn’t collide on narrow screens */
+/* On mobile, sidebar is top row — we want button accessible but not covering stuff */
 @media (max-width: 768px) {
   .toggle-theme {
-    left: 20px;            /* pinned to the left edge */
-    bottom: 80px;          /* above the sidebar row of links */
+    position: static;    /* Back to normal flow inside mobile nav */
+    width: auto;
+    transform: none;
+    margin-top: 0;
   }
 }
 
