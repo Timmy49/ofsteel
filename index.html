@@ -8,19 +8,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light">
-  <div class="sidebar">
+
+  <nav class="sidebar">
     <h1>OFSteel</h1>
     <hr>
     <a href="index.html">Home</a>
     <a href="download-links.html">Download Links</a>
     <a href="documentation.html">Documentation</a>
     <button class="toggle-theme">Switch to Dark Mode</button>
-  </div>
+  </nav>
 
-  <div class="container">
+  <main class="container">
     <h1>OFSteel</h1>
     <h2>Tampermonkey script to log JSON-RPC data</h2>
     <hr>
+
     <p>OFSteel is a Tampermonkey script to track login info on OFS and store it in Firebase, or download it locally.</p>
 
     <div class="big-button-group">
@@ -30,42 +32,36 @@
 
     <hr>
 
-    <div class="download-section">
+    <section>
       <h2>Other Links</h2>
       <div class="link-grid">
-        <a href="https://github.com/Timmy49/ofsteel">Github Scripts</a>
+        <a href="https://github.com/Timmy49/ofsteel">GitHub Scripts</a>
         <a href="https://console.firebase.google.com/u/0/project/ofs-logins/overview">Firebase</a>
         <a href="/ofsteel/files/ofsteel_firebase" download>OFSteel - Firebase</a>
         <a href="/ofsteel/files/ofsteel_local" download>OFSteel - Local</a>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-<script>
-const toggleBtn = document.querySelector('.toggle-theme');
-const body = document.body;
+  <script>
+    const toggleBtn = document.querySelector('.toggle-theme');
+    const body = document.body;
 
-// Load saved theme on page load
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.remove('light');
-  body.classList.add('dark');
-  toggleBtn.textContent = 'Switch to Light Mode';
-}
+    const setTheme = (theme) => {
+      body.classList.toggle('dark', theme === 'dark');
+      body.classList.toggle('light', theme === 'light');
+      toggleBtn.textContent = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+      localStorage.setItem('theme', theme);
+    };
 
-toggleBtn.addEventListener('click', () => {
-  if (body.classList.contains('light')) {
-    body.classList.remove('light');
-    body.classList.add('dark');
-    toggleBtn.textContent = 'Switch to Light Mode';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark');
-    body.classList.add('light');
-    toggleBtn.textContent = 'Switch to Dark Mode';
-    localStorage.setItem('theme', 'light');
-  }
-});
-</script>
+    // On load
+    setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+
+    toggleBtn.addEventListener('click', () => {
+      const newTheme = body.classList.contains('light') ? 'dark' : 'light';
+      setTheme(newTheme);
+    });
+  </script>
 
 </body>
 </html>
