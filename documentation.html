@@ -8,74 +8,69 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light">
-  <div class="sidebar">
+
+  <nav class="sidebar">
     <h1>OFSteel</h1>
     <hr>
     <a href="index.html">Home</a>
     <a href="download-links.html">Download Links</a>
     <a href="documentation.html">Documentation</a>
     <button class="toggle-theme">Switch to Dark Mode</button>
-  </div>
+  </nav>
 
-  <div class="container">
+  <main class="container">
     <h1>OFSteel Documentation</h1>
     <hr>
 
     <section>
-      <h3>NOTE: This tool is for educational purposes only. Any misuse of the tool, the developer will hold no responsibility for.</h3>
+      <h3>NOTE: This tool is for educational purposes only. The developer holds no responsibility for misuse.</h3>
     </section>
-    
+
     <section>
       <h2>Info</h2>
-      <p>OFSteel is a Tampermonkey script designed to log JSON-RPC data from OFS and store it in Firebase or download it locally. This documentation provides an overview of its features, installation instructions, and usage guidelines.</p>
+      <p>OFSteel is a Tampermonkey script that logs JSON-RPC data from OFS and stores it in Firebase or allows local downloads. This documentation outlines its features, installation steps, and usage.</p>
     </section>
 
     <section>
       <h2>Installation</h2>
-      <p>To install OFSteel, you need to have Tampermonkey installed in your browser. Once Tampermonkey is set up, you can install the OFSteel script by clicking the "Install OFSteel" button on the home page.</p>
+      <p>To install OFSteel, first install Tampermonkey on your browser. Then, visit the home page and click "Install OFSteel" to add the script.</p>
     </section>
 
     <section>
       <h2>Usage</h2>
-      <p>After installation, the script will automatically track login information on OFS and store it in Firebase. You can also download the data locally for offline access.</p>
+      <p>Once installed, the script automatically tracks login data on OFS and saves it to Firebase. You can also download the data for offline use.</p>
     </section>
 
     <section>
       <h2>Contributing</h2>
-      <p>If you wish to contribute to the development of OFSteel, please visit the <a href="https://github.com/Timmy49/ofsteel">GitHub repository</a> for more information.</p>
+      <p>If you’d like to contribute, visit the <a href="https://github.com/Timmy49/ofsteel">GitHub repository</a> for more details.</p>
     </section>
 
     <section>
       <h3>Developed by Timmy</h3>
     </section>
-    
-  </div>
 
-<script>
-const toggleBtn = document.querySelector('.toggle-theme');
-const body = document.body;
+  </main>
 
-// Load saved theme on page load
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.remove('light');
-  body.classList.add('dark');
-  toggleBtn.textContent = 'Switch to Light Mode';
-}
+  <script>
+    const toggleBtn = document.querySelector('.toggle-theme');
+    const body = document.body;
 
-toggleBtn.addEventListener('click', () => {
-  if (body.classList.contains('light')) {
-    body.classList.remove('light');
-    body.classList.add('dark');
-    toggleBtn.textContent = 'Switch to Light Mode';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark');
-    body.classList.add('light');
-    toggleBtn.textContent = 'Switch to Dark Mode';
-    localStorage.setItem('theme', 'light');
-  }
-});
-</script>
+    const setTheme = (theme) => {
+      body.classList.toggle('dark', theme === 'dark');
+      body.classList.toggle('light', theme === 'light');
+      toggleBtn.textContent = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+      localStorage.setItem('theme', theme);
+    };
+
+    // On load
+    setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+
+    toggleBtn.addEventListener('click', () => {
+      const newTheme = body.classList.contains('light') ? 'dark' : 'light';
+      setTheme(newTheme);
+    });
+  </script>
 
 </body>
 </html>
