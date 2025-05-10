@@ -213,6 +213,35 @@ body.dark hr {
   color: #fff;
 }
 
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* spacing between each link-item */
+  margin-top: 20px;
+}
+
+body.dark .link-item p {
+  color: #aab4c5; /* soft gray-blue for dark mode, matches your other text */
+}
+
+.link-item a {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--link-color, #007acc);
+  text-decoration: none;
+}
+
+.link-item a:hover {
+  text-decoration: underline;
+}
+
+.link-item p {
+  margin: 5px 0 0 0;
+  font-size: 0.95em;
+  color: var(--text-secondary, #555);
+}
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   body { flex-direction: column; }
