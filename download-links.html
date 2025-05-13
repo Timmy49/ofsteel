@@ -15,7 +15,8 @@
     <a href="index.html">Home</a>
     <a href="download-links.html">Download Links</a>
     <a href="documentation.html">Documentation</a>
-    <button class="toggle-theme">Switch to Dark Mode</button>
+    <button class="toggle-theme legacy-button">OFSteel Legacy</button>
+    <button class="toggle-theme theme-toggle-button">Switch to Dark Mode</button>
   </nav>
 
   <main class="container">
@@ -46,28 +47,30 @@
   </main>
 
   <script>
-    const toggleBtn = document.querySelector('.toggle-theme');
+    const themeToggleBtn = document.querySelector('.theme-toggle-button');
     const legacyBtn = document.querySelector('.legacy-button');
     const body = document.body;
 
     const setTheme = (theme) => {
       body.classList.toggle('dark', theme === 'dark');
       body.classList.toggle('light', theme === 'light');
-      toggleBtn.textContent = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+      themeToggleBtn.textContent = theme === 'dark'
+        ? 'Switch to Light Mode'
+        : 'Switch to Dark Mode';
       localStorage.setItem('theme', theme);
     };
 
     // On load
     setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
 
-    toggleBtn.addEventListener('click', () => {
+    themeToggleBtn.addEventListener('click', () => {
       const newTheme = body.classList.contains('light') ? 'dark' : 'light';
       setTheme(newTheme);
     });
 
     legacyBtn.addEventListener('click', () => {
-      // Handle the "OFSteel Legacy" button click event here
       alert('OFSteel Legacy version clicked');
+      // You can replace this with: window.location.href = "legacy.html";
     });
   </script>
 
