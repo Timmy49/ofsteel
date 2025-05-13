@@ -135,13 +135,14 @@ body.dark .container {
 /* Headings and text */
 h1 {
   font-size: 48px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;       /* ↑ increased from 10px */
   letter-spacing: 1px;
+  color: inherit;
 }
 
 h2 {
   font-size: 26px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;       /* ↑ increased from 25px */
   font-weight: normal;
   color: #555;
 }
@@ -152,7 +153,7 @@ body.dark h2 {
 
 h3 {
   font-size: 22px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;       /* ↓ slightly tighter than h2 */
   font-weight: bold;
   color: #333;
 }
@@ -166,6 +167,17 @@ p {
   margin-bottom: 30px;
   line-height: 1.6;
   color: inherit;
+}
+
+/* Global <hr> (container & content) */
+hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 40px 0;            /* ↑ increased from 30px */
+}
+
+body.dark hr {
+  border-top: 2px solid #2e3d55;
 }
 
 /* Global anchor tag styles */
@@ -240,20 +252,15 @@ body.dark a:hover {
   margin-top: 20px;
 }
 
-/* ==== REMOVED .link-item overrides ==== */
-/* .link-item a { font-size: 1.1em; } */
-/* .link-item p { font-size: 0.95em; } */
-
+/* link-item now inherits global sizes */
 .link-item a {
   display: inline-block;
   font-weight: bold;
-  /* now inherits the global a { font-size: 18px } */
   text-decoration: none;
 }
 
 .link-item p {
   margin: 5px 0 0 0;
-  /* now inherits p { font-size: 19px } */
   color: var(--text-secondary, #555);
 }
 
