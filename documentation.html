@@ -68,7 +68,7 @@
       localStorage.setItem('theme', theme);
     };
 
-    // Set theme on load
+    // On load
     setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
 
     themeToggleBtn.addEventListener('click', () => {
@@ -77,8 +77,7 @@
     });
 
     legacyBtn.addEventListener('click', () => {
-      alert('OFSteel Legacy version clicked');
-      // You can replace this with: window.location.href = "legacy.html"; or whatever you want
+      window.open('https://timmy49.github.io/ofs/', '_blank');
     });
   </script>
 
