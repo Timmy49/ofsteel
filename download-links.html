@@ -16,6 +16,7 @@
     <a href="download-links.html">Download Links</a>
     <a href="documentation.html">Documentation</a>
     <button class="toggle-theme">Switch to Dark Mode</button>
+    <button class="legacy-button">OFSteel Legacy</button>
   </nav>
 
   <main class="container">
@@ -47,6 +48,7 @@
 
   <script>
     const toggleBtn = document.querySelector('.toggle-theme');
+    const legacyBtn = document.querySelector('.legacy-button');
     const body = document.body;
 
     const setTheme = (theme) => {
@@ -62,6 +64,11 @@
     toggleBtn.addEventListener('click', () => {
       const newTheme = body.classList.contains('light') ? 'dark' : 'light';
       setTheme(newTheme);
+    });
+
+    legacyBtn.addEventListener('click', () => {
+      // Handle the "OFSteel Legacy" button click event here
+      alert('OFSteel Legacy version clicked');
     });
   </script>
 
