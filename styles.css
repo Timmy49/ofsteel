@@ -93,12 +93,39 @@ body.dark .sidebar hr {
   color: #2c3e50;
 }
 
-/* Theme toggle button */
-.toggle-theme {
+/* Buttons Container */
+.button-container {
   position: fixed;
   bottom: 20px;
-  left: 150px;
+  left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* OFSteel Legacy button */
+button.legacy-button {
+  width: 260px;
+  padding: 12px 15px;
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.legacy-button:hover {
+  background-color: #34495e;
+  color: white;
+}
+
+/* Theme toggle button */
+button.toggle-theme {
   width: 260px;
   padding: 12px 15px;
   font-size: 18px;
@@ -109,10 +136,9 @@ body.dark .sidebar hr {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  z-index: 1000;
 }
 
-.toggle-theme:hover {
+button.toggle-theme:hover {
   background-color: #16a085;
   color: white;
 }
@@ -222,8 +248,6 @@ body.dark a:hover {
 .big-download:hover {
   background-color: #254b9a;
 }
-
-/* DO NOT override .big-download in dark mode — keeps blue styling */
 
 /* Link-grid links */
 .link-grid {
