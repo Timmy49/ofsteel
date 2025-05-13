@@ -168,14 +168,24 @@ p {
   color: inherit;
 }
 
-hr {
-  border: none;
-  border-top: 2px solid #ddd;
-  margin: 30px 0;
+/* Global anchor tag styles */
+a {
+  font-size: 18px;
+  color: #007acc;
+  text-decoration: underline;
+  transition: color 0.2s;
 }
 
-body.dark hr {
-  border-top: 2px solid #2e3d55;
+a:hover {
+  color: #254b9a;
+}
+
+body.dark a {
+  color: #4fa3ff;
+}
+
+body.dark a:hover {
+  color: #82b7ff;
 }
 
 /* Buttons & Link-grid */
@@ -230,21 +240,20 @@ body.dark hr {
   margin-top: 20px;
 }
 
+/* ==== REMOVED .link-item overrides ==== */
+/* .link-item a { font-size: 1.1em; } */
+/* .link-item p { font-size: 0.95em; } */
+
 .link-item a {
   display: inline-block;
   font-weight: bold;
-  font-size: 1.1em;
-  color: var(--link-color, #007acc);
+  /* now inherits the global a { font-size: 18px } */
   text-decoration: none;
-}
-
-.link-item a:hover {
-  text-decoration: underline;
 }
 
 .link-item p {
   margin: 5px 0 0 0;
-  font-size: 0.95em;
+  /* now inherits p { font-size: 19px } */
   color: var(--text-secondary, #555);
 }
 
