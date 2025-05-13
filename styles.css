@@ -93,10 +93,12 @@ body.dark .sidebar hr {
   color: #2c3e50;
 }
 
-/* Sidebar buttons (Legacy + Theme Toggle) */
-.sidebar-button {
-  margin-top: 10px;
-  width: 100%;
+/* Theme & Legacy toggle buttons (positioned bottom-left) */
+.toggle-theme {
+  position: fixed;
+  left: 150px; /* Centered inside the 300px sidebar */
+  transform: translateX(-50%);
+  width: 260px;
   padding: 12px 15px;
   font-size: 18px;
   font-family: 'Courier New', monospace;
@@ -106,11 +108,21 @@ body.dark .sidebar hr {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  z-index: 1000;
 }
 
-.sidebar-button:hover {
+.toggle-theme:hover {
   background-color: #16a085;
   color: white;
+}
+
+/* Specific positioning for each button */
+.legacy-button {
+  bottom: 70px;
+}
+
+.theme-toggle-button {
+  bottom: 20px;
 }
 
 /* Main content area */
@@ -218,8 +230,6 @@ body.dark a:hover {
 .big-download:hover {
   background-color: #254b9a;
 }
-
-/* DO NOT override .big-download in dark mode — keeps blue styling */
 
 /* Link-grid links */
 .link-grid {
