@@ -34,22 +34,21 @@ body.dark {
 
 /* Inline links inside paragraphs */
 p a {
-  color: var(--link-color, #007acc);
+  color: #007acc;
   text-decoration: underline;
   font-weight: bold;
   transition: color 0.2s;
 }
-
 p a:hover {
   color: #254b9a;
 }
 
+/* Paragraph links in dark mode — now teal */
 body.dark p a {
-  color: #4fa3ff;
+  color: #1abc9c;
 }
-
 body.dark p a:hover {
-  color: #82b7ff;
+  color: #16a085;
 }
 
 /* Sidebar styling */
@@ -87,7 +86,6 @@ body.dark .sidebar hr {
   display: block;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .sidebar a:hover {
   background-color: #1abc9c;
   color: #2c3e50;
@@ -102,7 +100,6 @@ body.dark .sidebar hr {
   width: 260px;
   padding: 12px 15px;
   font-size: 18px;
-  font-family: 'Courier New', monospace;
   background-color: #1abc9c;
   color: #2c3e50;
   border: none;
@@ -111,7 +108,6 @@ body.dark .sidebar hr {
   transition: background-color 0.3s, color 0.3s;
   z-index: 1000;
 }
-
 .toggle-theme:hover {
   background-color: #16a085;
   color: white;
@@ -135,29 +131,26 @@ body.dark .container {
 /* Headings and text */
 h1 {
   font-size: 48px;
-  margin-bottom: 20px;       /* ↑ increased from 10px */
+  margin-bottom: 20px;
   letter-spacing: 1px;
-  color: inherit;
 }
 
 h2 {
   font-size: 26px;
-  margin-bottom: 30px;       /* ↑ increased from 25px */
+  margin-bottom: 30px;
   font-weight: normal;
   color: #555;
 }
-
 body.dark h2 {
   color: #b0bcd0;
 }
 
 h3 {
   font-size: 22px;
-  margin-bottom: 24px;       /* ↓ slightly tighter than h2 */
+  margin-bottom: 26px;
   font-weight: bold;
   color: #333;
 }
-
 body.dark h3 {
   color: #d0d6e0;
 }
@@ -169,35 +162,33 @@ p {
   color: inherit;
 }
 
-/* Global <hr> (container & content) */
+/* Global <hr> */
 hr {
   border: none;
   border-top: 2px solid #ddd;
-  margin: 40px 0;            /* ↑ increased from 30px */
+  margin: 40px 0;
 }
-
 body.dark hr {
   border-top: 2px solid #2e3d55;
 }
 
-/* Global anchor tag styles */
+/* Global anchor styles (non-<p> links) */
 a {
   font-size: 18px;
   color: #007acc;
   text-decoration: underline;
   transition: color 0.2s;
 }
-
 a:hover {
   color: #254b9a;
 }
 
+/* Dark-mode anchors now teal */
 body.dark a {
-  color: #4fa3ff;
+  color: #1abc9c;
 }
-
 body.dark a:hover {
-  color: #82b7ff;
+  color: #16a085;
 }
 
 /* Buttons & Link-grid */
@@ -209,6 +200,7 @@ body.dark a:hover {
   margin-bottom: 30px;
 }
 
+/* “Big-download” buttons become teal in dark mode */
 .big-download {
   padding: 18px 30px;
   font-size: 24px;
@@ -218,18 +210,23 @@ body.dark a:hover {
   text-decoration: none;
   transition: background-color 0.3s;
 }
-
 .big-download:hover {
   background-color: #254b9a;
 }
+body.dark .big-download {
+  background-color: #1abc9c;
+}
+body.dark .big-download:hover {
+  background-color: #16a085;
+}
 
+/* Link-grid links */
 .link-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
 }
-
 .link-grid a {
   text-decoration: none;
   color: #3366cc;
@@ -239,40 +236,44 @@ body.dark a:hover {
   border-radius: 8px;
   transition: background-color 0.2s, color 0.2s;
 }
-
 .link-grid a:hover {
   background-color: #3366cc;
   color: #fff;
 }
 
+/* Dark-mode link-grid now teal */
+body.dark .link-grid a {
+  color: #1abc9c;
+  border-color: #1abc9c;
+}
+body.dark .link-grid a:hover {
+  background-color: #1abc9c;
+  color: #2c3e50;
+}
+
+/* Link-list items — inherit global sizes */
 .link-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 20px;
 }
-
-/* link-item now inherits global sizes */
 .link-item a {
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
 }
-
 .link-item p {
   margin: 5px 0 0 0;
   color: var(--text-secondary, #555);
 }
-
 body.dark .link-item p {
   color: #aab4c5;
 }
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
+  body { flex-direction: column; }
 
   .sidebar {
     width: 100%;
@@ -280,16 +281,9 @@ body.dark .link-item p {
     justify-content: space-around;
     padding: 10px;
   }
-
   .sidebar h1,
-  .sidebar hr {
-    display: none;
-  }
-
-  .sidebar a {
-    margin: 0 10px;
-    padding: 10px;
-  }
+  .sidebar hr { display: none; }
+  .sidebar a { margin: 0 10px; padding: 10px; }
 
   .toggle-theme {
     position: static;
