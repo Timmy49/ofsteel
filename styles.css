@@ -93,13 +93,10 @@ body.dark .sidebar hr {
   color: #2c3e50;
 }
 
-/* Theme toggle button */
-.toggle-theme {
-  position: fixed;
-  bottom: 20px;
-  left: 150px;
-  transform: translateX(-50%);
-  width: 260px;
+/* Sidebar buttons (Legacy + Theme Toggle) */
+.sidebar-button {
+  margin-top: 10px;
+  width: 100%;
   padding: 12px 15px;
   font-size: 18px;
   font-family: 'Courier New', monospace;
@@ -109,10 +106,9 @@ body.dark .sidebar hr {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  z-index: 1000;
 }
 
-.toggle-theme:hover {
+.sidebar-button:hover {
   background-color: #16a085;
   color: white;
 }
