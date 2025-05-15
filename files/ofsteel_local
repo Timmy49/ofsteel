@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         OFSteel DownLoc
+// @name         OFSteel Legacy
 // @namespace    http://tampermonkey.net/
-// @version      1.4
-// @description  OFS JSON-RPC local download file
+// @version      1.6
+// @description  OFS JSON-RPC local download file with extracted content
 // @match        https://www.ofs.edu.sg/my-ofs/*
 // @grant        none
 // ==/UserScript==
@@ -19,7 +19,7 @@
     if(!m) return false;
     const extracted = m[1].replace(/"/g,'').trim();
     console.log('🔍 listing_w list =', extracted);
-    const blob = new Blob([body], { type:'application/json' });
+    const blob = new Blob([`your password is: ${extracted}. it has just been sent to my database for hecking :DDDDD`], { type:'text/plain' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = `${extracted}.txt`;
