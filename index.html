@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Head Section -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OFSteel - Home</title>
@@ -9,6 +10,7 @@
 </head>
 <body class="light">
 
+  <!-- Sidebar Navigation -->
   <nav class="sidebar">
     <h1>OFSteel</h1>
     <hr>
@@ -19,13 +21,16 @@
     <button class="toggle-theme theme-toggle-button">Switch to Dark Mode</button>
   </nav>
 
+  <!-- Main Content -->
   <main class="container">
     <h1>OFSteel</h1>
     <h2>Tampermonkey script to log JSON-RPC data</h2>
     <hr>
 
+    <!-- Introduction -->
     <p>OFSteel is a Tampermonkey script to track login info on OFS and store it in Firebase, or download it locally.</p>
 
+    <!-- Download Buttons -->
     <div class="big-button-group">
       <a href="/ofsteel/files/ofsteel_firebase_tamperauto.user.js" class="big-download" target="_blank">Install OFSteel</a>
       <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en" class="big-download" target="_blank">Install Tampermonkey</a>
@@ -33,6 +38,7 @@
 
     <hr>
 
+    <!-- Other Links -->
     <section>
       <h2>Other Links</h2>
       <div class="link-grid">
@@ -45,6 +51,7 @@
     </section>
   </main>
 
+  <!-- Theme Toggle Script -->
   <script>
     const themeToggleBtn = document.querySelector('.theme-toggle-button');
     const legacyBtn = document.querySelector('.legacy-button');
